@@ -13,15 +13,6 @@ const MenuList = async ({
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
 
-  // const filteredMenuItems =
-  //   menuItems.foods && Array.isArray(menuItems)
-  //     ? menuItems.foods.filter((item) => {
-  //         return normalizeString(item.title)
-  //           .toLowerCase()
-  //           .includes(normalizeString(query).toLowerCase());
-  //       })
-  //     : [];
-
   const filteredMenuItems =
     menuItems && Array.isArray(menuItems.foods)
       ? menuItems.foods.filter((item) => {
