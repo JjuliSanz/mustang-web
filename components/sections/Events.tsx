@@ -17,9 +17,9 @@ const Video = ({
 }) => {
   return (
     <div className={cn("flex flex-col gap-4", classProp)}>
-      <h3 className="text-center text-2xl text-quinto shadow-quinto-xs font-primary">
+      <m.h3 variants={opacityAnimation} className="text-center text-2xl text-quinto shadow-quinto-xs font-primary">
         {title}
-      </h3>
+      </m.h3>
       <m.video
         variants={opacityAnimation}
         className="w-full md:w-[300px] h-[250px] 450:h-[300px] 500:h-[350px] md:h-[400px] lg:h-[450px] object-cover  bg-segundo box-shadow-black"
@@ -48,9 +48,9 @@ const Events = () => {
         className="w-full bg-[url('/wood.webp')] bg-cover bg-center bg-fixed"
       >
         <div className="flex flex-col px-2 md:px-10 pt-40 pb-20 gap-10 bg-primero/60">
-          <h2 className="text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary">
+          <m.h2 variants={opacityAnimation} className="text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary">
             MUSTANG EVENTS
-          </h2>
+          </m.h2>
           <div className="w-full flex flex-col sm:flex-row max-sm:items-center sm:justify-between max-lg:gap-6">
             {/* COLUM 1 */}
             <Video
@@ -71,7 +71,7 @@ const Events = () => {
               classProp="sm:pb-32"
             />
           </div>
-          <div className="w-full flex justify-between ">
+          <m.div variants={opacityAnimation} className="w-full flex justify-between ">
             <Link
               href="https://mustang.meitre.com/"
               target="_blank"
@@ -88,7 +88,7 @@ const Events = () => {
             >
               <Instagram className="w-6 md:w-10 h-6 md:h-10" />
             </Link>
-          </div>
+          </m.div>
         </div>
       </m.section>
     </LazyMotion>

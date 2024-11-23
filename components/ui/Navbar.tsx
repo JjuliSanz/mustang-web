@@ -62,7 +62,7 @@ const Navbar = () => {
           {/* HOME */}
           <ListItem
             href="/"
-            title="SELQUET"
+            title="MUSTANG"
             classNameProp="order-3 md:order-first "
           />
           {/* DESKTOP MENU */}

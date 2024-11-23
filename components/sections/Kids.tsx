@@ -20,26 +20,26 @@ const Kids = () => {
         {/* TEXT */}
         <div className="order-2 md:order-1 w-full md:w-1/2 flex flex-col md:justify-between max-md:gap-6">
           <div className="flex flex-col gap-4">
-            <h2 className="text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary">
+            <m.h2 variants={opacityAnimation} className="text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary">
               KIDS ZONE + PONY KIDS CLUB
-            </h2>
-            <p className="text-2xl font-medium">
+            </m.h2>
+            <m.p variants={opacityAnimation} className="text-2xl font-medium">
               El aire libre siempre es la mejor opción para los más peques!
-            </p>
+            </m.p>
           </div>
           <div className="flex flex-col gap-6 md:gap-10 text-quinto">
-            <p className="text-3xl font-medium ">
+            <m.p variants={opacityAnimation} className="text-3xl font-medium ">
               Kids Zone:{" "}
               <span className="text-2xl font-normal"> todos los días.</span>
-            </p>
-            <p className="text-3xl font-medium ">
+            </m.p>
+            <m.p variants={opacityAnimation} className="text-3xl font-medium ">
               Pony kids club:{" "}
               <span className="text-2xl font-normal">
                 {" "}
                 sábados y domingos al mediodía.
               </span>
-            </p>
-            <p className="text-3xl font-medium flex flex-col 600:flex-row md:flex-col lg:flex-row">
+            </m.p>
+            <m.p variants={opacityAnimation} className="text-3xl font-medium flex flex-col 600:flex-row md:flex-col lg:flex-row">
               En conjunto a:
               <Link
                 href="https://www.instagram.com/clubhipicobenavidez/"
@@ -48,7 +48,7 @@ const Kids = () => {
               >
                 @clubhipicobenavidez <ArrowTop className="rotate-45 w-4 h-4" />
               </Link>
-            </p>
+            </m.p>
           </div>
         </div>
         {/* VIDEO */}
