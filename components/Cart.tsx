@@ -6,7 +6,7 @@ import {
   PlusIcon,
   TrashIcon,
 } from "@/assets/icons";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, easeInOut } from "framer-motion";
 import Image from "next/image";
 import {
   calculateIndividualPrice,
@@ -35,10 +35,11 @@ const Cart = ({ classNameProp }: { classNameProp: string }) => {
 
   return (
     <AnimatePresence mode="sync">
-      <div className={cn(`relative`, classNameProp)}>
+      <motion.div className={cn(`relative`, classNameProp)}>
         <CartIcon
           width={24}
           height={24}
+          
           className="cursor-pointer hover:scale-95 hover:opacity-70 active:scale-95 active:opacity-70 transition ease-in duration-150"
           onClick={isCartOpen ? closeCart : openCart}
         />
@@ -47,7 +48,7 @@ const Cart = ({ classNameProp }: { classNameProp: string }) => {
             {totalItems}
           </div>
         )}
-      </div>
+      </motion.div>
       {isCartOpen && (
         <motion.div
           key="cart-overlay"

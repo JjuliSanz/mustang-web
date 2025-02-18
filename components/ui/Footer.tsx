@@ -7,27 +7,24 @@ import {
 } from "@/assets/icons/index";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="relative flex flex-col place-items-center pt-8 pb-2 gap-6 mt-32 w-full mx-auto bg-primero/60">
+    <footer
+      className="relative flex flex-col place-items-center pt-8 pb-2 gap-10 w-full mx-auto overflow-hidden"
+      style={{
+        backgroundImage:
+          "linear-gradient(to top, var(--primero) 0%, var(--segundo) 50%, var(--tercero) 100%)",
+      }}
+    >
       <hr className="absolute top-0 h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-quinto to-transparent bg-center" />
 
-      <div className="flex flex-col gap-4 sm:flex-row lg:gap-6 text-quinto text-center text-xl font-serif font-semibold items-center">
+      <div className="flex flex-col gap-4 sm:flex-row lg:gap-6 text-sexto text-center text-xl font-serif font-semibold items-center">
         <div className="flex items-center gap-4">
-          <span>
-            {/* © 2024 CENTENARIO  */}
-            &copy; {new Date().getFullYear()}
-          </span>
-          <Image
-            alt="logo"
-            src="/logo.webp"
-            width={100}
-            height={100}
-            className="w-14 object-cover"
-          />
+          <Logo className="w-[50px] h-[50px] logo" />
         </div>
-        <span aria-hidden="true" className="hidden sm:inline">
+        <span aria-hidden="true" className="hidden sm:inline quinto-svg">
           |
         </span>
         <div className="flex items-center gap-4">
@@ -36,7 +33,7 @@ const Footer = () => {
             href="https://www.instagram.com/mustangbarngrill/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-quinto "
+            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-sexto quinto-svg"
             aria-label="Instagram del restaurante, se abrirá en una nueva pestaña"
           >
             <Instagram className="w-6 h-6" />
@@ -57,7 +54,7 @@ const Footer = () => {
           <Link
             href="https://mustang.meitre.com/"
             target="_blank"
-            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-quinto "
+            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-sexto quinto-svg"
             aria-label="Resevas del restaurante, se abrirá en una nueva pestaña"
           >
             <ReserveIcon width={24} height={24} />
@@ -79,7 +76,7 @@ const Footer = () => {
             href="https://www.facebook.com/MustangMeatMarket/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-quinto text-3xl "
+            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-sexto text-3xl quinto-svg"
             aria-label="Facebook del restaurante, se abrirá en una nueva pestaña"
           >
             <Facebook width={24} height={24} />
@@ -90,25 +87,21 @@ const Footer = () => {
             href="https://queresto.com/mustangmeatmarket/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-quinto text-3xl "
+            className="inline-block hover:scale-110 hover:opacity-70 motion-safe:transition ease-in-out duration-300 motion-reduce:scale-100 text-sexto text-3xl quinto-svg"
           >
             <PDFIcon width={24} height={24} />
           </Link>
         </div>
       </div>
-      <hr
-        aria-hidden="true"
-        className="h-[2px] w-full min-w-[18rem] border-t-0 bg-transparent bg-gradient-to-r from-transparent via-quinto to-transparent bg-center"
-      />
 
-      <span className="text-quinto text-center text-base font-serif font-semibold flex gap-1">
+      <span className="place-self-end bottom-0 right-0 text-sexto text-center text-xs font-serif font-semibold flex gap-1">
         Made by
         <Link
-          href="https://my-portfoli-website.netlify.app/"
+          href="https://mirai-web-lab.vercel.app/"
           className="underline flex items-center hover:scale-95 transition ease-in duration-150 hover:opacity-70 active:scale-95 active:opacity-70"
           aria-label="Portfolio del desarrollador, se abrirá en una nueva pestaña"
         >
-          Julian Sanz
+          MIRAI WEB LAB
           <ArrowTop className="w-4 rotate-45" />
         </Link>
       </span>

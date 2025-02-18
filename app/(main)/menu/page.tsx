@@ -1,4 +1,5 @@
 import { PDFIcon } from "@/assets/icons";
+import Cart from "@/components/Cart";
 import CardSkeleton from "@/components/menu/CardSkeleton";
 import CategorySelector from "@/components/menu/CategorySelector";
 import MenuList from "@/components/menu/MenuList";
@@ -14,19 +15,27 @@ export default async function Menu({
 }: {
   searchParams?: { category?: string; query?: string };
 }) {
-  const categories = await getCategories();
-  const query = searchParams?.query || "";
-  const selectedCategory =
-    searchParams?.category ||
-    (categories.length > 0 ? categories[0].title : "");
+  // const categories = await getCategories();
+  // const query = searchParams?.query || "";
+  // const selectedCategory =
+  //   searchParams?.category ||
+  //   (categories.length > 0 ? categories[0].title : "");
 
   return (
-    <main className="w-full mt-[50px] min-h-dvh bg-[url('/wood.webp')] bg-cover bg-center bg-fixed">
-      <div className="w-full flex flex-col pt-10 relative bg-primero/60">
-        <CategorySelector
+    <main className="w-full mt-[50px] min-h-dvh relative flex flex-col ">
+      {/* Fondo con imagen */}
+      <div className="absolute inset-0 bg-fixed bg-cover bg-center max-sm:bg-[url('/galeria/galeria-7-mobile.webp')] sm:bg-[url('/galeria/galeria-7.jpeg')]" />
+
+      {/* Capa de color con opacidad */}
+      <div className="absolute inset-0 bg-primero/60" />
+
+      {/* MOBILE CART */}
+      <Cart classNameProp="z-50 fixed bottom-4 left-4 sm:hidden text-quinto rounded-full bg-segundo border border-quinto p-2 hover:scale-95 transition ease-in duration-150 hover:opacity-70 active:scale-95 active:opacity-70" />
+     
+        {/* <CategorySelector
           selectedCategory={selectedCategory}
           categories={categories}
-        />
+        /> */}
 
         <div className="relative flex flex-col sm:flex-row gap-4 justify-center items-center mt-10 z-10">
           <SearchBarMenu placeholder="Buscar productos por su titulo" />
@@ -41,9 +50,9 @@ export default async function Menu({
           </Link>
         </div>
 
-        <section
-          key={selectedCategory}
-          className="p-8 grid grid-cols-1 600:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 z-20 relative"
+        <div
+          // key={selectedCategory}
+          className="grow p-8 grid grid-cols-1 600:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 z-20 relative"
         >
           <Suspense
             fallback={
@@ -55,12 +64,12 @@ export default async function Menu({
               </>
             }
           >
-            <MenuList selectedCategory={selectedCategory} query={query} />
+            {/* <MenuList selectedCategory={selectedCategory} query={query} /> */}
           </Suspense>
-        </section>
+        </div>
         <ToTopButton extraClass="z-20" />
         <Footer />
-      </div>
+      
     </main>
   );
 }

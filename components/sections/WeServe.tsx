@@ -20,16 +20,15 @@ const Item = ({ image, title }: { image: string; title: string }) => {
         sizes="(max-width: 768px) 50vw, 100vw"
         className="absolute inset-0 w-full h-full object-cover rounded-lg"
       />
-      
+
       <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.6),rgba(0,0,0,0.9))] opacity-100 group-hover:opacity-100 transition-opacity duration-300 rounded-lg lg:opacity-0"></div>
-           
+
       <h3 className="w-full relative z-10 text-lg 400:text-2xl text-center font-primary text-quinto px-2 break-words opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         {title}
       </h3>
     </m.div>
   );
 };
-
 
 const WeServe = () => {
   const ref = useRef(null);
@@ -42,38 +41,41 @@ const WeServe = () => {
         initial="hidden"
         animate={isInView && "visible"}
         variants={container}
-        className="w-full mt-20 px-4 sm:px-10 py-20 flex flex-col items-center justify-center gap-10 wrap bg-primero"
+        className="w-full px-4 sm:px-10 py-40 flex flex-col items-center justify-center gap-10 wrap"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, var(--primero) 0%, var(--segundo) 50%, var(--tercero) 100%)",
+        }}
       >
         <m.h2
           variants={opacityAnimation}
-          className="text-4xl md:text-5xl text-center w-full py-2 bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary"
+          className="text-4xl md:text-5xl text-center w-full py-2 bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary shadow-quinto-sm"
         >
-          Nuestro Menú!
+          Servimos!
         </m.h2>
         <div className="w-full grid grid-cols-2 900:grid-cols-4 gap-4 ">
-          <Item image="/comida/entrada.jpeg" title="Entradas" />
-          <Item image="/comida/malfatti.jpeg" title="Principales" />
-          <Item image="/comida/parrilla.jpeg" title="Parrilla" />
-          <Item image="/comida/burgers.jpeg" title="Burgers" />
-          <Item image="/comida/pure.jpeg" title="Guarniciones" />
-          <Item image="/comida/salad.jpeg" title="Ensaladas" />
-          <Item image="/comida/volcan-choco.jpeg" title="Postres" />
-          <Item image="/comida/campari-orange.jpeg" title="Tragos" />
+          <Item
+            image="/comida/Apricot-Daydream.jpeg"
+            title="Apricot Daydream"
+          />
+          <Item image="/comida/Bocata.jpeg" title="Bocata" />
+          <Item
+            image="/comida/Croquetas-Malfatti.jpeg"
+            title="Croquetas Malfatti"
+          />
+          <Item image="/comida/Grandpa-Nap.jpeg" title="Grandpa's Nap" />
+          <Item image="/comida/Meat-Balls.jpeg" title="Meat Balls" />
+          <Item image="/comida/Runaway.jpeg" title="Runaway" />
+          <Item image="/comida/Pastrami-Sando.jpeg" title="Pastrami Sando" />
+          <Item image="/comida/Suave-Escoses.jpeg" title="Suave Escoses" />
         </div>
-
-        <m.p
-          variants={opacityAnimation}
-          className="text-xl text-quinto font-medium italic"
-        >
-          and more!
-        </m.p>
         <m.button variants={opacityAnimation} className="w-fit mx-auto">
           <Link
             href="/menu"
             target="_blank"
-            className="w-fit  motion-safe:transition duration-150 ease-in-out font-semibold font-primary uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none hover:scale-[0.97] flex items-center gap-2 bg-segundo border-2 border-quinto text-quinto hover:bg-cuarto hover:text-segundo hover:border-cuarto active:bg-tercero active:text-segundo active:border-tercero"
+            className="button motion-safe:transition duration-150 ease-in-out font-primary uppercase "
           >
-            VER MÁS
+            MENÚ COMPLETO
           </Link>
         </m.button>
       </m.section>

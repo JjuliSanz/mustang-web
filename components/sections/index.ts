@@ -4,9 +4,8 @@ import Hero from "./Hero";
 import Map from "./Map";
 import Servicies from "./Servicies";
 import WeServe from "./WeServe";
-import Video from "./Video";
 import Gallery from "./Gallery";
-import Kids from "./Kids";
-import Events from "./Events";
+import Tragos from "./Tragos";
+import Videos from "./Videos";
 
-export { About, ContactUs, Hero, Map, Servicies, WeServe, Video, Gallery, Kids, Events };
+export { About, ContactUs, Hero, Map, Servicies, WeServe, Gallery, Tragos, Videos };

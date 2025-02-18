@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
+// const primaryFont = localFont({
+//   src: "./fonts/HudsonNY-Serif-edited.woff",
+//   display: "swap",
+//   weight: '800',
+//   variable: "--primary-font",
+// });
 
-const primaryFont = localFont({
-  src: "./fonts/HudsonNY-Serif-edited.woff",
+const primaryFont = Open_Sans({
   display: "swap",
-  weight: '800',
+  subsets: ["latin"],
+  weight: ["800", "500", "700"],
   variable: "--primary-font",
 });
 

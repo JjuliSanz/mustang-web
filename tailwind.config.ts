@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primero: "#111111",
-        segundo: "#2D1B0E",
-        tercero: "#5A3014",
-        cuarto: "#8C5E35",
-        quinto: "#C29A6A",
-        sexto: "#F5F1E8",
+        primero: "#071919",
+        segundo: "#1F342F",
+        tercero: "#99618d",
+        cuarto: "#51122E",
+        quinto: "#E32296",
+        sexto: "#E9A4AB",
       },
       screens: {
         "900": "900px",

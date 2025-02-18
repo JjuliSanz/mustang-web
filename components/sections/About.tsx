@@ -15,59 +15,49 @@ const About = () => {
         variants={container}
         ref={ref}
         id="nosotros"
-        className="w-full bg-primero flex pt-[200px] mt-20 relative"
+        className="w-full flex pt-[200px] relative"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top, var(--primero) 0%, var(--segundo) 50%, var(--tercero) 100%)",
+        }}
       >
-        <m.div className="w-[90%] xl:w-[85%] absolute transform top-0 left-1/2 -translate-x-1/2 p-6 text-2xl flex flex-col gap-2 items-center justify-center box-shadow-cuarto-xs bg-segundo">
+        <m.div
+          className="w-[90%] lg:w-[70%] absolute transform top-0 left-1/2 -translate-x-1/2 p-6 text-2xl flex flex-col gap-4 lg:gap-6 items-center justify-center border-2 border-sexto box-shadow-quinto bg-primero"
+          style={{
+            background:
+              "radial-gradient(circle, var(--quinto) 0%, var(--cuarto) 100%)",
+          }}
+        >
           <m.h2
             variants={opacityAnimation}
-            className="text-2xl sm:text-4xl font-semibold text-center text-transparent text-stroke shadow-cuarto "
+            className="text-2xl sm:text-4xl font-primary font-semibold text-center text-sexto shadow-quinto"
           >
-            ALL SET FOR YOU
+            LIFE BEGING AFTER OFFICE
           </m.h2>
 
           <m.p
             variants={opacityAnimation}
-            className="text-quinto text-base 400:text-lg 500:text-xl md:text-2xl font-medium "
+            className="text-sexto shadow-cuarto text-base 400:text-lg 500:text-xl md:text-2xl lg:text-3xl font-medium "
           >
-            En Mustang, ofrecemos una experiencia gastronómica única que destaca
-            por la calidad inigualable de nuestra comida y un servicio
-            excepcional. 
+            En lo alto de la ciudad, donde las luces brillan y la música crea el
+            ambiente perfecto, nace Segundo, un rooftop bar diseñado para
+            aquellos que buscan algo más. Con una propuesta de tragos de autor
+            cuidadosamente creados, combinamos innovación y calidad en cada
+            copa.
           </m.p>
 
           <m.p
             variants={opacityAnimation}
-            className="text-quinto text-base 400:text-lg 500:text-xl md:text-2xl font-medium "
+            className="text-sexto shadow-cuarto text-base 400:text-lg 500:text-xl md:text-2xl lg:text-3xl font-medium "
           >
-            Cada detalle ha sido cuidadosamente pensado para crear
-            un ambiente exclusivo, donde la estética moderna se mezcla con un
-            toque de tradición, invitando a nuestros visitantes a disfrutar de
-            momentos memorables.
-          </m.p>
-
-          <m.p
-            variants={opacityAnimation}
-            className="text-quinto text-base 400:text-lg 500:text-xl md:text-2xl font-medium hidden lg:block"
-          >
-            Nos enorgullecemos de nuestra selecta oferta de productos de primer
-            nivel, que van desde cortes de carne premium hasta una cuidada
-            selección de fiambres, vinos y aderezos. Todo está diseñado para
-            garantizar una experiencia que deleite los sentidos, con un entorno
-            acogedor y sofisticado que refleja nuestro compromiso con la
-            excelencia.
-          </m.p>
-          <m.p
-            variants={opacityAnimation}
-            className="text-quinto text-base 400:text-lg 500:text-xl md:text-2xl font-medium hidden 600:block"
-          >
-            Somos más que un restaurante y un market; somos un espacio donde la
-            buena comida, el entretenimiento y un entorno incomparable se
-            combinan para ofrecerte momentos inolvidables. En Mustang, cada
-            visita es más que una comida; es una celebración de buen gusto y
-            estilo.
+            Seguí la señal rosa y descubrí nuestro espacio en la terraza de
+            Dandy, un rincón donde el after office se transforma en experiencias
+            inolvidables. Porque en Segundo, la noche no termina… apenas
+            empieza.
           </m.p>
         </m.div>
 
-        <div className="w-full h-[400px] sm:h-[500px] bg-cover bg-center bg-fixed max-sm:bg-[url('/vibe/mobile/vibe-1-mb.webp')] sm:bg-[url('/vibe/vibe-1.jpeg')]"></div>
+        <div className="w-full h-[400px] sm:h-[500px] bg-cover bg-center bg-fixed max-sm:bg-[url('/vibe/mobile/segundo-about.webp')] sm:bg-[url('/vibe/segundo-about.jpeg')]"></div>
       </m.section>
     </LazyMotion>
   );

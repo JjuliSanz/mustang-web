@@ -27,11 +27,15 @@ const Gallery = () => {
         animate={isInView && "visible"}
         variants={container}
         id="galeria"
-        className="w-full flex flex-col mt-20 py-20 px-10"
+        className="w-full flex flex-col py-20 px-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, var(--primero) 0%, var(--segundo) 50%, var(--tercero) 100%)",
+        }}
       >
         <m.h2
           variants={opacityAnimation}
-          className="py-2 text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke   font-primary"
+          className="py-2 text-4xl md:text-5xl text-center w-full bg-clip-text text-transparent bg-gradient-to-b from-cuarto to-primero text-stroke font-primary shadow-quinto-sm"
         >
           GALERIA
         </m.h2>

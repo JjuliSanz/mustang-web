@@ -3,12 +3,10 @@ import {
   Hero,
   About,
   WeServe,
-  Video,
+  Videos,
   Gallery,
-  Kids,
-  Events,
+  Tragos,
 } from "@/components/sections";
-import AboutSlider from "@/components/sliders/AboutSlider";
 import Footer from "@/components/ui/Footer";
 
 export default async function Home() {
@@ -18,11 +16,9 @@ export default async function Home() {
       <WeServe />
       <About />
       {/* <Servicies /> */}
-      <Kids />
+      <Tragos />
       <ContactUs />
-      <Events />
-      <AboutSlider />
-      <Video />
+      <Videos />
       <Gallery />
       <Footer />
     </div>
