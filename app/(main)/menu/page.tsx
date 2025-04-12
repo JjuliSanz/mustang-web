@@ -5,6 +5,7 @@ import MenuList from "@/components/menu/MenuList";
 import SearchBarMenu from "@/components/menu/SearchBarMenu";
 import Footer from "@/components/ui/Footer";
 import ToTopButton from "@/components/ui/ToTopButton";
+import { categoriesLocal } from "@/constants";
 import { getCategories } from "@/utils/serverActions";
 import Link from "next/link";
 import React, { Suspense } from "react";
@@ -14,7 +15,15 @@ export default async function Menu({
 }: {
   searchParams?: { category?: string; query?: string };
 }) {
-  const categories = await getCategories();
+  let categories;
+
+  try {
+    categories = await getCategories();
+  } catch (error) {
+    console.error("Fallo Prisma, usando categorías locales:", error);
+    categories = categoriesLocal;
+  }
+
   const query = searchParams?.query || "";
   const selectedCategory =
     searchParams?.category ||

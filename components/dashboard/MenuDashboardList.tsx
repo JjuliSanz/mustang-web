@@ -6,6 +6,7 @@ import { getCategories, getFoodsByCategory } from "@/utils/serverActions";
 import { Suspense } from "react";
 import LoadingSkeleton from "./LoadingSkeleton";
 
+
 const MenuDashboardList = async ({
   query,
   selectedCategory,
