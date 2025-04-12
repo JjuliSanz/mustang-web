@@ -1,6 +1,6 @@
 import { getFoodsByCategory } from "@/utils/serverActions";
 import MenuCard from "./MenuCard";
-import { menuItemsLocal } from "@/constants";
+import { MenuItem } from "@/types/types";
 
 const MenuList = async ({
   query,
@@ -17,8 +17,16 @@ const MenuList = async ({
   // Usamos el array que venga, ya sea de la DB o hardcoded
   const foods = Array.isArray(menuData.foods) ? menuData.foods : [];
 
+  const isLocalData = "category" in foods[0];
+
   const filteredMenuItems = foods
-  .filter((item) => item.category === selectedCategory)
+  .filter((item) => {
+    if (isLocalData) {
+      const localItem = item as MenuItem;
+      return localItem.category === selectedCategory;
+    }
+    return true; // si viene de la DB ya está filtrado
+  })
   .filter((item) =>
     normalizeString(item.title)
       .toLowerCase()
@@ -30,7 +38,8 @@ const MenuList = async ({
       {"error" in menuData && menuData.fallback && (
         <div className="w-full col-span-full flex items-center">
           <p className="w-fit text-center text-yellow-500 font-semibold px-6 py-4">
-            Error al cargar productos desde la base de datos. Mostrando menú precargado.
+            Error al cargar productos desde la base de datos. Mostrando menú
+            precargado.
           </p>
         </div>
       )}
@@ -42,9 +51,7 @@ const MenuList = async ({
           </p>
         </div>
       ) : (
-        filteredMenuItems.map((item) => (
-          <MenuCard item={item} key={item.id} />
-        ))
+        filteredMenuItems.map((item) => <MenuCard item={item} key={item.id} />)
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 
-// const allowedEmails = process.env.ALLOWED_EMAILS?.split(",") || [];
+const allowedEmails = process.env.ALLOWED_EMAILS?.split(",") || [];
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   providers: [Google],
@@ -13,6 +13,18 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     authorized: async ({ auth }) => {
       // Logged in users are authenticated, otherwise redirect to login page
       return !!auth
+    },
+    async signIn({ user }) {
+      const email = user.email!;
+
+      if (allowedEmails.includes(email)) {
+        return true;
+      }
+
+      // 🔒 Log de intento de acceso no autorizado
+      console.warn(`Intento de acceso no autorizado con el email: ${email}`);
+
+      return false;
     },
   },
 });
